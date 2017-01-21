@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html charset="utf-8" ng-app="myPage">
+
+<head meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thomas Ortiz - Numeric Base Converter</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- Link some pretty fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <!-- Link Angular & bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- User Created JS files -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/app.baseController.js"></script>
+</head>
+
+<body ng-controller="baseCtrl">
+    <form class="description centeredForm">
+        <label>Decimal (10):</label> 
+        <input 
+            type="text" 
+            id='dec' 
+            pattern="[0-9]*"   
+            title="Decimal is only numbers"
+            autocomplete="off" 
+            data-ng-model="locals.dec" 
+            ng-change="locals.decChange()"><br>
+       
+        <label>Binary (2) :</label>
+        <input 
+            type="text"
+            id='bin'
+            pattern="[0-1]*"   
+            title="Binary is only in 0s and 1s"
+            autocomplete="off" 
+            data-ng-model="locals.bin" 
+            ng-change="locals.binChange()"><br>
+        
+        <label>Hex (16):</label>
+        <input 
+            type="text" 
+            id='hex' autocomplete="off" 
+            placeholder="0x" 
+            pattern="0[xX][0-9A-Fa-f]*"   
+            title="Hex is numbers and A-F"
+            data-ng-model="locals.hex" 
+            ng-change="locals.hexChange()"><br>
+        
+        <label>Octal (8) :</label>
+        <input 
+            type="text" 
+            id='oct' 
+            pattern="[0-7]*"   
+            title="Octal is only 0-7"
+            autocomplete="off" 
+            data-ng-model="locals.oct" 
+            ng-change="locals.octChange()"><br>
+        
+        <button type="button" class="btn btn-primary" style="margin-top:1em; display:block; margin: 0 auto; margin-top: 1em;" ng-click="locals.resetFields()">Reset</button>
+    </form>
+</body>
+
+
+</html>
